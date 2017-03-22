@@ -5,6 +5,7 @@
  */
 package pl.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -15,6 +16,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import pl.models.DocDTO;
 import pl.models.DocItemDTO;
 import pl.vo.monitor.MonitorApi;
 
@@ -40,16 +42,22 @@ public class MonitorRozrachunkowREST {
     
     
     @GET
-    @Path("{nip}/{rok}")
+    @Path("/items/{nip}/{rok}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<DocItemDTO>  countREST(@PathParam("nip") String nip, @PathParam("rok") String rok) {       
-        List<DocItemDTO> docItems = monitorApi.getDocumentForOwnNumberAndData(nip, rok);       
+    public List<DocItemDTO>  getDocumentItemsForNipAndYear(@PathParam("nip") String nip, @PathParam("rok") String rok) {       
+        List<DocItemDTO> docItems = monitorApi.getDocumentItemsForNipAndYear(nip, rok);       
         return docItems;
     }
     
     
     
-    
+    @GET
+    @Path("/doc/{rozId}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public List<DocDTO>  getDocumentForRowId(@PathParam("rozId") String rozId) {       
+        List<DocDTO> doc = monitorApi.getDocumentForRowId(Long.parseLong(rozId));       
+        return doc;
+    }
     
     
 }
