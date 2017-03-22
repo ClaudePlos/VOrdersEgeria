@@ -102,7 +102,7 @@ public class MonitorApi implements Serializable {
         
         
          String sql = "SELECT DOK.DOK_NUMER_WLASNY,DOK.DOK_NUMER_OBCY,\n" +
-            "DOK.DOK_DATA_WYSTAWIENIA,DOK.DOK_DATA_ZAKSIEGOWANIA,PL_DATA_WYMAGALNOSCI\n" +
+            "to_char(DOK.DOK_DATA_WYSTAWIENIA,'YYYY-MM-DD'),to_char(DOK.DOK_DATA_ZAKSIEGOWANIA,'YYYY-MM-DD'),to_char(PL_DATA_WYMAGALNOSCI,'YYYY-MM-DD')\n" +
             ",PL_F_ZAPLATA,PL_F_ROZLICZONA\n" +
             ",DOK.DOK_OPIS, PL_OPIS\n" +
             ",PL_KWOTA_WN,PL_KWOTA_MA\n" +
@@ -124,9 +124,9 @@ public class MonitorApi implements Serializable {
                item.setNumerWlasny((String) i[0] );
                item.setNumerObcy((String) i[1] );
                
-               item.setDataWystawienia((Date) i[2] );
-               item.setDataZaksiegowania((Date) i[3] );
-               item.setDataWymagalnosci((Date) i[4] );
+               item.setDataWystawienia((String) i[2] );
+               item.setDataZaksiegowania((String) i[3] );
+               item.setDataWymagalnosci((String) i[4] );
                
                item.setZaplata((String) i[5] );
                item.setRozliczona((String) i[6] ); 

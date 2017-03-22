@@ -17,9 +17,9 @@ public class DocDTO {
     private String numerWlasny;
     private String numerObcy;
     
-    private Date dataWystawienia;
-    private Date dataZaksiegowania;
-    private Date dataWymagalnosci;
+    private String dataWystawienia;
+    private String dataZaksiegowania;
+    private String dataWymagalnosci;
     
     private String zaplata;
     private String rozliczona;
@@ -46,27 +46,27 @@ public class DocDTO {
         this.numerObcy = numerObcy;
     }
 
-    public Date getDataWystawienia() {
+    public String getDataWystawienia() {
         return dataWystawienia;
     }
 
-    public void setDataWystawienia(Date dataWystawienia) {
+    public void setDataWystawienia(String dataWystawienia) {
         this.dataWystawienia = dataWystawienia;
     }
 
-    public Date getDataZaksiegowania() {
+    public String getDataZaksiegowania() {
         return dataZaksiegowania;
     }
 
-    public void setDataZaksiegowania(Date dataZaksiegowania) {
+    public void setDataZaksiegowania(String dataZaksiegowania) {
         this.dataZaksiegowania = dataZaksiegowania;
     }
 
-    public Date getDataWymagalnosci() {
+    public String getDataWymagalnosci() {
         return dataWymagalnosci;
     }
 
-    public void setDataWymagalnosci(Date dataWymagalnosci) {
+    public void setDataWymagalnosci(String dataWymagalnosci) {
         this.dataWymagalnosci = dataWymagalnosci;
     }
 
@@ -118,8 +118,7 @@ public class DocDTO {
         this.ma = ma;
     }
 
-    
-    
+  
     
     
 }
