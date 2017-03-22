@@ -1,0 +1,7 @@
+
+
+-- zlicza ile jest klientów w ckkklienciakt
+http://localhost:40884/VOrdersEgeria/rest/ckkklienciakt/count
+
+
+http://localhost:40884/VOrdersEgeria/rest/monitor/1/2017
